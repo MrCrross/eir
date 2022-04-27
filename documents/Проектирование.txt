@@ -1,0 +1,5 @@
+https://app.diagrams.net/#G11r-vLxjScfG3MfEtN44NAF_9Suafzt_b - база данных
+https://wireframe.cc/7dOgco - вход
+https://wireframe.cc/OaEdxG - регистрация
+https://wireframe.cc/bzSaLO - запись клиента на прием
+https://wireframe.cc/sspjzH - выполнение прием врача

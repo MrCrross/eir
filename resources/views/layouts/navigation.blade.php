@@ -26,7 +26,7 @@
             </div>
             @auth
                 @if(Auth::user()->hasRole('admin'))
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                             {{ __('Пользователи') }}
                         </x-nav-link>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('rooms.index')" :active="request()->routeIs('rooms.index')">
-                            {{ __('Комнаты') }}
+                            {{ __('Кабинеты') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -46,7 +46,28 @@
                             {{ __('Должности') }}
                         </x-nav-link>
                     </div>
-                @endif
+            @endif
+
+            @if(Auth::user()->hasRole('doctor'))
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('records.index')" :active="request()->routeIs('records.index')">
+                                {{ __('Запись') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('visits.index')" :active="request()->routeIs('visits.index')">
+                                {{ __('Заявки') }}
+                            </x-nav-link>
+                        </div>
+            @endif
+
+                @if(Auth::user()->hasRole('client'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('records.my',Auth::user()->id)" :active="request()->routeIs('records.my',Auth::user()->id)">
+                            {{ __('Мои запись') }}
+                        </x-nav-link>
+                    </div>
+            @endif
 
             <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ml-6">

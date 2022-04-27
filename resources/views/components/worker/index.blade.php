@@ -54,7 +54,14 @@
             </div>
             <div>
                 <span class="font-bold">Кабинет:</span>
-                <span>{{ $user->workers[0]->room->name }}</span>
+                <span>{{ $user->workers[0]->room->name }}
+                </span>
+            </div>
+            <div>
+                <span class="font-bold">Расписание:</span>
+                @foreach($user->workers[0]->seances as $seance)
+                    <div>{{mb_substr($seance->name,0,5)}}</div>
+                @endforeach
             </div>
         </div>
     </div>

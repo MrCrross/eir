@@ -10,16 +10,16 @@ class Visit extends Model
     use HasFactory;
     protected $fillable=[
         'client_id',
-        'room_id',
+        'worker_id',
         'seance',
         'description'
     ];
 
 
-    public function  clients(){
+    public function  client(){
         return $this->belongsTo(Client::class);
     }
-    public function  rooms(){
-        return $this->belongsTo(Room::class);
+    public function  worker(){
+        return $this->belongsTo(Worker::class);
     }
 }

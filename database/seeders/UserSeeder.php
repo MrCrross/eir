@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Client;
 use App\Models\User;
 use App\Models\Worker;
+use App\Models\WorkerSeance;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,13 +20,13 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'last_name' => 'root',
-                'first_name' => 'root',
-                'father_name' => 'root',
-                'name' => 'root',
-                'password' => Hash::make('root'),
-                'email' => 'root@root.com',
-                'phone' => '+7(964)659-99-99',
+                'last_name' => 'Администратор',
+                'first_name' => 'Администратор',
+                'father_name' => 'Администратор',
+                'name' => 'admin',
+                'password' => Hash::make('admin'),
+                'email' => 'admin@admin.com',
+                'phone' => '+7(999)999-99-99',
                 'role' => 1
             ],
             [
@@ -65,6 +66,45 @@ class UserSeeder extends Seeder
             ],
         ];
 
+        $worker_seances = [
+            [
+                'worker_id' => 1,
+                'seance_id' => 1
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 2
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 3
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 4
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 5
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 6
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 7
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 8
+            ],
+            [
+                'worker_id' => 1,
+                'seance_id' => 9
+            ],
+        ];
+
         foreach ($users as $user) {
             User::create([
                 'last_name' => $user['last_name'],
@@ -90,6 +130,13 @@ class UserSeeder extends Seeder
                 'post_id' => $worker['post_id'],
                 'user_id' => $worker['user_id'],
                 'room_id' => $worker['room_id'],
+            ]);
+        }
+
+        foreach ($worker_seances as $worker_seance) {
+            WorkerSeance::create([
+                'worker_id' => $worker_seance['worker_id'],
+                'seance_id' => $worker_seance['seance_id'],
             ]);
         }
     }

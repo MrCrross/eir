@@ -11,15 +11,19 @@ class Record extends Model
 
     protected $fillable=[
         'client_id',
-        'room_id',
-        'seance'
+        'worker_id',
+        'seance_id',
+        'day'
     ];
 
 
-    public function  clients(){
+    public function  client(){
         return $this->belongsTo(Client::class);
     }
-    public function  rooms(){
-        return $this->belongsTo(Room::class);
+    public function  seance(){
+        return $this->belongsTo(Seance::class);
+    }
+    public function  worker(){
+        return $this->belongsTo(Worker::class);
     }
 }

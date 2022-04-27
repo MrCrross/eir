@@ -15,14 +15,14 @@ class CreateVisitsTable extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('room_id')->unsigned()->unique();
+            $table->bigInteger('worker_id')->unsigned();
             $table->bigInteger('client_id')->unsigned();
             $table->dateTime('seance');
             $table->text('description');
 
-            $table->foreign('room_id')
+            $table->foreign('worker_id')
                 ->references('id')
-                ->on('rooms')
+                ->on('workers')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 

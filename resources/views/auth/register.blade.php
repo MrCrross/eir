@@ -47,6 +47,11 @@
                     id="phone" class="block mt-1 w-full" type="tel" name="phone"
                     required></x-form.input>
             </div>
+            <div class="mt-2">
+                <x-form.label for="birthday" class="font-bold" value="Дата рождения:"></x-form.label>
+                <x-form.input
+                    id="birthday" class="block mt-1 w-full" type="date" name="birthday" max="{{date('Y-m-d')}}" required></x-form.input>
+            </div>
             <!-- Password -->
             <div class="mt-2">
                 <x-form.label for="password" :value="__('Пароль')"></x-form.label>

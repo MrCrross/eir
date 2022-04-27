@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecordsTable extends Migration
+class CreateWorkerSeancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,15 @@ class CreateRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('records', function (Blueprint $table) {
-            $table->id();
+        Schema::create('worker_seances', function (Blueprint $table) {
             $table->bigInteger('worker_id')->unsigned();
-            $table->bigInteger('client_id')->unsigned();
-            $table->date('day');
             $table->bigInteger('seance_id')->unsigned();
+
+            $table->primary(['worker_id','seance_id']);
 
             $table->foreign('worker_id')
                 ->references('id')
                 ->on('workers')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('client_id')
-                ->references('id')
-                ->on('clients')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -37,6 +30,7 @@ class CreateRecordsTable extends Migration
                 ->on('seances')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
@@ -48,6 +42,6 @@ class CreateRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('records');
+        Schema::dropIfExists('worker_seances');
     }
 }

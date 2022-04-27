@@ -41,4 +41,9 @@ class Worker extends Model
         return $this->hasMany(Record::class);
     }
 
+    public function seances()
+    {
+        return $this->belongsToMany(Seance::class, 'worker_seances');
+    }
+
 }

@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-menu.worker></x-menu.worker>
+
+    <x-menu.visit></x-menu.visit>
     <div class="container mx-auto flex flex-row justify-center">
         <div class="my-5">
-            <x-worker.create class="max-w-sm" :rooms="$rooms" :posts="$posts" :seances="$seances"></x-worker.create>
+            <x-visit.edit class="max-w-sm" :visit="$visit"></x-visit.edit>
         </div>
     </div>
 @endsection
