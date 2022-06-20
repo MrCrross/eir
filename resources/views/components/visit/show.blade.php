@@ -29,7 +29,7 @@
     <div class="flex flex-col items-center pb-10">
         <div>
             <div>
-                <span class="font-bold">Работник:</span>
+                <span class="font-bold">Врач:</span>
                 <span>{{$visit->worker->post->name." ".
 $visit->worker->user->last_name." ".
 mb_substr($visit->worker->user->first_name,0,1).".".mb_substr($visit->worker->user->father_name,0,1)}}</span>

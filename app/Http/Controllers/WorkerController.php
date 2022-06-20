@@ -94,7 +94,7 @@ class WorkerController extends Controller
             }
 
             DB::commit();
-            return redirect()->route('workers.index')->with('success', 'Работник успешно создан');
+            return redirect()->route('workers.index')->with('success', 'Врач успешно создан');
         } catch (Throwable $e) {
             DB::rollBack();
             return redirect()->route('workers.index')->with('danger', 'Произошла ошибка' . $e->getMessage());
@@ -197,7 +197,7 @@ class WorkerController extends Controller
             }
 
             DB::commit();
-            return redirect()->route('workers.index')->with('success', 'Работник успешно изменен');
+            return redirect()->route('workers.index')->with('success', 'Врач успешно изменен');
         } catch (Throwable $e) {
             DB::rollBack();
             return redirect()->route('workers.index')->with('danger', 'Произошла ошибка' . $e->getMessage());
@@ -218,7 +218,7 @@ class WorkerController extends Controller
             Worker::where('user_id', $id)->delete();
             User::find($id)->delete();
             return redirect()->route('workers.index')
-                ->with('success', 'Работник удален успешно');
+                ->with('success', 'Врач удален успешно');
         });
     }
 }

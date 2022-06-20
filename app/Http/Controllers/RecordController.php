@@ -182,10 +182,14 @@ class RecordController extends Controller
 //            ->whereDoesntHave('records')
 //            ->get();
 //        $seances = Worker::with('seances')->whereDoesntHave('records')->where('id',$request->worker_id)->first();
-        $seances = Seance::with('workers')
+        $seances = Seance::with('workers','records')
             ->whereHas('workers', function ($q) use ($request) {
                 return $q->where('id', $request->worker_id);
-            })->get();
+            })
+            ->whereDoesntHave('records',function ($q)use ($request){
+                return $q->where('day',$request->day);
+            })
+            ->get();
         return response()->json([
             'seances' => $seances
         ]);

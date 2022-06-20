@@ -33,7 +33,7 @@
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('workers.index')" :active="request()->routeIs('workers.index')">
-                            {{ __('Работники') }}
+                            {{ __('Врачи') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

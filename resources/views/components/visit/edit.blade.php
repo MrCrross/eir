@@ -6,7 +6,7 @@
     <div class="flex flex-col items-center p-6">
         <div>
             <div>
-                <x-form.label class="font-bold" value="Работник:"></x-form.label>
+                <x-form.label class="font-bold" value="Врач:"></x-form.label>
                 <span>{{$visit->worker->post->name." ".
 $visit->worker->user->last_name." ".
 mb_substr($visit->worker->user->first_name,0,1).".".mb_substr($visit->worker->user->father_name,0,1)}}</span>
