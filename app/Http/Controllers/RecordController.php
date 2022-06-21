@@ -50,6 +50,7 @@ class RecordController extends Controller
      */
     public function store(Request $request)
     {
+
         DB::beginTransaction();
         try {
             $request->validate([
@@ -87,9 +88,10 @@ class RecordController extends Controller
                     'day' => $request->day,
                     'seance_id' => $request->seance_id
                 ]);
+
                 $mailData = (object)[
                     'email' => $request->email,
-                    'login' => $request->last_name . ucfirst(mb_substr($request->first_name, 0, 1)) . ucfirst(mb_substr($request->father_name, 0, 1)),
+                    'login' => $user->name,
                     'password' => $password,
                     'day'=>$request->day,
                     'seance' => Seance::where('id', $request->seance_id)->pluck('name')->first(),

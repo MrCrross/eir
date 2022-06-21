@@ -80,7 +80,7 @@
                             <div class="flex items-center seanceCheck hidden">
                                 <label class="text-sm font-medium text-gray-100">
                                     <input type="radio"
-                                           name="seances[]"
+                                           name="seance_id"
                                            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500">
                                     <span></span>
                                 </label>
@@ -151,7 +151,7 @@
                             <div class="flex items-center seanceCheck hidden">
                                 <label class="text-sm font-medium text-gray-100">
                                     <input type="radio"
-                                           name="seances[]"
+                                           name="seance_id"
                                            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500">
                                     <span></span>
                                 </label>

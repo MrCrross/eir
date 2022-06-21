@@ -8,7 +8,7 @@
     Логин: {{$data->login}}
     Пароль: {{$data->password}}
 
-    Время сеанса: {{$data->day}} {{$data->seance->name}}
+    Время сеанса: {{$data->day}} {{$data->seance}}
     Для более подробной информации войдите в личный кабинет.
 
     @component('mail::button', ['url' => route("login")])
